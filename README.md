@@ -20,3 +20,20 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 
 ## 实现和使用
 
+### fake code
+
+```
+判断 python 版本 引入库
+如果当前路径中已有超过 5 张图片
+	删除所有图片
+获取 collection random img 下载链接
+命名下载文件为 unsplash + time tag.jpg
+设为桌面背景
+```
+
+### 使用说明
+
+1. download release
+2. 如有需要，对 main.py :27 进行修改
+3. ​
+
