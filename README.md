@@ -27,6 +27,7 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 如果当前路径中已有超过 5 张图片
 	删除所有图片
 获取 collection random img 下载链接
+对下载链接的参数进行设定
 命名下载文件为 unsplash + time tag.jpg
 设为桌面背景
 ```
@@ -34,6 +35,6 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 ### 使用说明
 
 1. download release
-2. 如有需要，对 main.py :27 进行修改
+2. 如果希望修改图源为自己的 collection 或者需要更高分辨率的图片，可以在 macosplash.py 的 user configuration 部分进行相应修改
 3. ​
 
