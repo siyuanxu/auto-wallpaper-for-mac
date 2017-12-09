@@ -1,3 +1,14 @@
+###############################################################
+#################### user configuration #######################
+collection_id = 1465048 # siyuanxu wallpaper collection      ##
+                        # you can just use mine              ##
+img_width = 3000        # bigger than your screen width      ##
+                        # default 2000                       ##
+cache_num = 5           # how many pictures you want to keep ##
+                        # default 5                          ##
+#################### user configuration #######################
+###############################################################
+
 import sys
 import os
 import re
@@ -11,17 +22,9 @@ else:
     # might be around one day
     from urllib2 import Request, urlopen
 
-#################### user configuration ####################
-collection_id = 1465048 # siyuanxu wallpaper collection
-                        # you can just use mine
-img_width = 2000        # bigger than your screen width 
-                        # default 2000
-cache_num = 5           # how many pictures you want to keep
-                        # default 5
-#################### user configuration ####################
 
 # clear the oldest picture to save space
-path = os.getcwd()
+path = str(os.getcwd())+r'/wallpaper_cache/'
 img_list = [i for i in os.listdir(path) if i[-3:]=='jpg']
 if len(img_list)>cache_num-1:
     os.remove(img_list[0])
@@ -41,7 +44,7 @@ response = urlopen(larger_size)
 
 # give the img name a time tag
 # otherwise, macOS won't change the wallpaper if they have the same filename
-img_name = 'unsplash{}.jpg'.format(time.time())
+img_name = '{0}unsplash{1}.jpg'.format(path, time.time())
 
 # generally, urlretrieve was used to download files 
 # but it has some issues when we have an unstable network condition
@@ -49,5 +52,5 @@ with open(img_name, "wb") as f:
     f.write(response.read())
 
 # use apple script to set wallpaper
-# import appscript
-# appscript.app('Finder').desktop_picture.set(appscript.mactypes.File(img_name))
+import appscript
+appscript.app('Finder').desktop_picture.set(appscript.mactypes.File(img_name))
