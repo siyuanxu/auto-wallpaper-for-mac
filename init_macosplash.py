@@ -65,7 +65,7 @@ response = urlopen(larger_size)
 
 # give the img name a time tag
 # otherwise, macOS won't change the wallpaper if they have the same filename
-img_name = '{0}/unsplash{1}.jpg'.format(macosplash_path, time.time())
+img_name = '{0}/wallpaper_cache/unsplash{1}.jpg'.format(macosplash_path, time.time())
 
 # generally, urlretrieve was used to download files 
 # but it has some issues when we have an unstable network condition
@@ -115,4 +115,8 @@ os.system('''cp macosplash.plist ~/Library/LaunchAgents/macosplash.plist
 cd ~/Library/LaunchAgents/
 launchctl load macosplash.plist
 ''')
+
+os.system('rm macosplash.plist')
+
+
 
