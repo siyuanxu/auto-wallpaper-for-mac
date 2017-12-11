@@ -6,7 +6,7 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 
 - macOS
 - Python 2.X 3.X
-- appscript
+- pip
 
 *Tested under macOS High Sierra python 2.7 python 3.5 python 3.6*
 
