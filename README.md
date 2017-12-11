@@ -35,6 +35,26 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 ### 使用说明
 
 1. download release
+
 2. 如果希望修改图源为自己的 collection 或者需要更高分辨率的图片，可以在 macosplash.py 的 user configuration 部分进行相应修改
-3. ​
+
+3. 如果没有安装 appscript module ，请 pip 安装
+
+4. 运行 init_macosplash.py ，生成 macosplash.plist 和 macosplash.sh
+
+5. 给 macosplash.sh u+x 权限
+
+   ~~~
+   chmod u+x macosplash.sh
+   ~~~
+
+6. 复制 macsplash.plist 至 ~/Library/LaunchAgents/ 中
+
+7. 在 LaunchAgents 路径中执行以下代码
+
+   ~~~
+   launchctl load macosplash.plist
+   ~~~
+
+   ​
 

@@ -1,13 +1,13 @@
-###############################################################
-#################### user configuration #######################
-collection_id = 1465048 # siyuanxu wallpaper collection      ##
-                        # you can just use mine              ##
-img_width = 3000        # bigger than your screen width      ##
-                        # default 2000                       ##
-cache_num = 5           # how many pictures you want to keep ##
-                        # default 5                          ##
-#################### user configuration #######################
-###############################################################
+#!/Users/siyuan/miniconda2/bin/python
+
+interval = 600      
+collection_id = 1465048 
+                    
+img_width = 3000     
+                    
+cache_num = 5
+
+macosplash_path = '/Users/siyuan/Dropbox/github/macosplash'     
 
 import sys
 import os
@@ -22,12 +22,11 @@ else:
     # might be around one day
     from urllib2 import Request, urlopen
 
-
 # clear the oldest picture to save space
-path = str(os.getcwd())+r'/wallpaper_cache/'
+path = str(macosplash_path)+r'/wallpaper_cache/'
 img_list = [i for i in os.listdir(path) if i[-3:]=='jpg']
 if len(img_list)>cache_num-1:
-    os.remove(img_list[0])
+    os.remove('{0}/{1}'.format(path,img_list[0]))
 
 # url treatment
 pre_img_url = 'https://source.unsplash.com/collection/{}'.format(collection_id)
@@ -44,7 +43,7 @@ response = urlopen(larger_size)
 
 # give the img name a time tag
 # otherwise, macOS won't change the wallpaper if they have the same filename
-img_name = '{0}unsplash{1}.jpg'.format(path, time.time())
+img_name = '{0}/wallpaper_cache/unsplash{1}.jpg'.format(macosplash_path, time.time())
 
 # generally, urlretrieve was used to download files 
 # but it has some issues when we have an unstable network condition
