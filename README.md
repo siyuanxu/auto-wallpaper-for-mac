@@ -24,3 +24,7 @@ Macosplash 可以通过 unsplash 的开放 API 来获取图片并定时设定为
 2. 如果希望修改图源为自己的 collection 或者需要更高分辨率的图片，可以在 init_macosplash.py 的 user configuration 部分进行相应修改，切换桌面背景的间隔也在这里修改。
 
 3. 运行 init_macosplash.py 
+
+## TODO
+- 打包成 .app 文件
+- 简单的 gui 来设置图源或者延时。
